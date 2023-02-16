@@ -1,0 +1,137 @@
+html{
+  *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+}
+
+:root{
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+  --white: #ffffff;
+}
+
+body {
+  background-color: var(--Dark-cyan);
+  font-family: 'Kumbh Sans', sans-serif;
+  Font-size: 18px;
+  background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
+  background-repeat: no-repeat;
+  background-position: left -33% top 210%, right -35% top -135%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+
+}
+
+main{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+}
+
+#refresh{
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+
+  &:active{
+    transform: scale(.95);
+  }
+}
+
+.card{
+  max-inline-size: 347px;
+  background-color: var(--white) ;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 1px 1px 7px var(--Very-dark-blue) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+
+  &-header{
+    max-inline-size: 100%;
+  }
+
+  &-body{
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-block-end: 0.9px solid rgb(220, 218, 218);
+
+    &-img{
+      inline-size: 200px;
+      block-size: 200px;
+      border: 5px solid var(--white);
+      border-radius: 50%;
+      margin-block-start: calc(-100px - 5px);
+      border: none;
+      background-color: var(--white);
+      object-fit: scale-down;
+      // object-fit: contain;
+      transition: 0.5s;
+
+      &:hover{
+        transform: scale(0.8);
+      }
+    }
+
+    &-title{
+      font-size: 20px;
+      margin-block-start: 18px;
+      color: var(--Very-dark-blue);
+      text-transform: capitalize;
+      span{
+        color: var(--Dark-grayish-blue) ;
+        font-weight: 400;
+        margin-inline-start: 4px;
+      }
+    }
+
+   h2{
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+    font-size: 14px;
+    margin-block-start: 0;
+    margin-block-end: 20px;
+   }
+  }
+
+  &-footer{
+    inline-size: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 22px;
+
+    &-social{
+      font-size: 12px;
+      text-align: center;
+
+      h3{
+        margin-block-end: 3px;
+        font-size: 16px;
+      }
+
+      p{
+        margin-block-start: 0;
+        color: var(--Dark-grayish-blue);
+        font-weight: 400;
+        letter-spacing: 1px;
+
+      }
+    }
+  }
+}
+
